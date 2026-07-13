@@ -2,7 +2,7 @@
   * This file is part of the hoverboard-firmware-hack project.
   *
   * Copyright (C) 2020-2021 Emanuel FERU <aerdronix@gmail.com>
-  *
+  * 长春笨鸟修改增加按键换挡逻辑。xbbcar.com
   * This program is free software: you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by
   * the Free Software Foundation, either version 3 of the License, or
@@ -1297,6 +1297,26 @@ void readCommand(void) {
 
     #if defined(CRUISE_CONTROL_SUPPORT) && (defined(SUPPORT_BUTTONS) || defined(SUPPORT_BUTTONS_LEFT) || defined(SUPPORT_BUTTONS_RIGHT))
         cruiseControl(button1);                                           // Cruise control activation/deactivation
+    #endif
+
+    #ifdef VARIANT_BBCAR
+    if (button2) {
+        if (drive_mode == 4) {
+            drive_mode = 1;
+        } else {
+            drive_mode++;
+        }
+        beepShortMany2((uint8_t)drive_mode);
+    }
+
+    if (button1) {
+      if (drive_mode == 1) {
+          drive_mode = 4;
+      } else {
+          drive_mode--;
+      }
+      beepShortMany2((uint8_t)drive_mode);
+  }
     #endif
 }
 
