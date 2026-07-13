@@ -2,6 +2,8 @@
 # hoverboard-firmware-hack-FOC - 经典四档位卡丁车长春笨鸟升级版（按键换档）
 这是基于著名的 EmanuelFeru 平衡车主板 FOC larsmm 优化版bbcar的基础上进一步修改优化而来的经典四档位卡丁车版本，是bbcar固件 的改进版本。
 
+![bobbycar pic](http://xbbcar.com/zb_users/upload/2025/10/202510231761181911998954.jpg)
+
 ### 功能特点
 - 通过方向盘上的两个电位器控制：1. 前进，2. 刹车/倒车/涡轮增压模式
 - 4种驾驶模式，分别对应不同的速度、加速度和功能
